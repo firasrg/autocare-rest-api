@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: demo-jsonbuilder
+  h2:
+    console:
+      enabled: true
