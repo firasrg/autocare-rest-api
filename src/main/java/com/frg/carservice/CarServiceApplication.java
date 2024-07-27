@@ -1,13 +1,13 @@
-package com.example.demo_jsonbuilder;
+package com.frg.carservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoJsonbuilderApplication {
+public class CarServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoJsonbuilderApplication.class, args);
+		SpringApplication.run(CarServiceApplication.class, args);
 	}
 
 }

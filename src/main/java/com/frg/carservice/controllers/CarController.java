@@ -1,6 +1,6 @@
-package com.example.demo_jsonbuilder.controllers;
+package com.frg.carservice.controllers;
 
-import com.example.demo_jsonbuilder.services.CarService;
+import com.frg.carservice.services.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo-jsonbuilder</artifactId>
+	<artifactId>car-service-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>demo-jsonbuilder</name>
-	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
+	<name>car-service-rest-api</name>
+	<description>Car service management system</description>
 	<url/>
 	<licenses>
 		<license/>

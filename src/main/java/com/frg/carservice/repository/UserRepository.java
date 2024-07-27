@@ -1,6 +1,6 @@
-package com.example.demo_jsonbuilder.repository;
+package com.frg.carservice.repository;
 
-import com.example.demo_jsonbuilder.entities.User;
+import com.frg.carservice.entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

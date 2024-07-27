@@ -1,4 +1,4 @@
-package com.example.demo_jsonbuilder.technical;
+package com.frg.carservice.technical;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

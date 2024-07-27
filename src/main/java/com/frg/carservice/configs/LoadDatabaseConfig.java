@@ -1,15 +1,15 @@
-package com.example.demo_jsonbuilder.configs;
+package com.frg.carservice.configs;
 
-import com.example.demo_jsonbuilder.entities.Car;
-import com.example.demo_jsonbuilder.entities.Client;
-import com.example.demo_jsonbuilder.entities.Maintainer;
-import com.example.demo_jsonbuilder.entities.Tool;
-import com.example.demo_jsonbuilder.entities.User;
-import com.example.demo_jsonbuilder.repository.CarRepository;
-import com.example.demo_jsonbuilder.repository.ClientRepository;
-import com.example.demo_jsonbuilder.repository.MaintainerRepository;
-import com.example.demo_jsonbuilder.repository.ToolRepository;
-import com.example.demo_jsonbuilder.repository.UserRepository;
+import com.frg.carservice.entities.Car;
+import com.frg.carservice.entities.Client;
+import com.frg.carservice.entities.Maintainer;
+import com.frg.carservice.entities.Tool;
+import com.frg.carservice.entities.User;
+import com.frg.carservice.repository.CarRepository;
+import com.frg.carservice.repository.ClientRepository;
+import com.frg.carservice.repository.MaintainerRepository;
+import com.frg.carservice.repository.ToolRepository;
+import com.frg.carservice.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

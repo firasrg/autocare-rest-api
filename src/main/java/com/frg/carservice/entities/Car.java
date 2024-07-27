@@ -1,4 +1,4 @@
-package com.example.demo_jsonbuilder.entities;
+package com.frg.carservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

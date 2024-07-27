@@ -1,6 +1,6 @@
-package com.example.demo_jsonbuilder.repository;
+package com.frg.carservice.repository;
 
-import com.example.demo_jsonbuilder.entities.Car;
+import com.frg.carservice.entities.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

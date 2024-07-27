@@ -1,4 +1,4 @@
-package com.example.demo_jsonbuilder.entities;
+package com.frg.carservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,20 +18,21 @@ import java.util.Objects;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Maintainer {
+public class Client {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "maintainer")
+    @OneToMany(mappedBy = "client")
     private List<Car> cars;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Maintainer that)) return false;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(cars, that.cars);
+        if (!(o instanceof Client client)) return false;
+        return Objects.equals(id, client.id) && Objects.equals(name, client.name) && Objects.equals(cars, client.cars);
     }
 
     @Override

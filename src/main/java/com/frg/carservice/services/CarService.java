@@ -1,11 +1,11 @@
-package com.example.demo_jsonbuilder.services;
+package com.frg.carservice.services;
 
-import com.example.demo_jsonbuilder.entities.Car;
-import com.example.demo_jsonbuilder.entities.Tool;
-import com.example.demo_jsonbuilder.repository.CarRepository;
-import com.example.demo_jsonbuilder.repository.ToolRepository;
-import com.example.demo_jsonbuilder.technical.ModelObjectBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.frg.carservice.entities.Car;
+import com.frg.carservice.entities.Tool;
+import com.frg.carservice.repository.CarRepository;
+import com.frg.carservice.repository.ToolRepository;
+import com.frg.carservice.technical.ModelObjectBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

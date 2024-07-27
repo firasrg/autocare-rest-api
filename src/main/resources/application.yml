@@ -1,6 +1,6 @@
 spring:
   application:
-    name: demo-jsonbuilder
+    name: car-service-rest-api
   h2:
     console:
       enabled: true

@@ -1,16 +1,16 @@
-package com.example.demo_jsonbuilder.entities;
+package com.frg.carservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -18,25 +18,26 @@ import java.util.Objects;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Client {
+public class Tool {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "client")
-    private List<Car> cars;
+    @ManyToOne
+    @JoinColumn(name = "maintainer_id")
+    private Maintainer maintainer;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Client client)) return false;
-        return Objects.equals(id, client.id) && Objects.equals(name, client.name) && Objects.equals(cars, client.cars);
+        if (!(o instanceof Tool tool)) return false;
+        return Objects.equals(id, tool.id) && Objects.equals(name, tool.name) && Objects.equals(maintainer, tool.maintainer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, cars);
+        return Objects.hash(id, name, maintainer);
     }
 }
