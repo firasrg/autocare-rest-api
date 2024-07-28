@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Pre-commit hook
+#
+
+# Run the Maven verify command
+./mvnw verify --offline
+
+# capture exit status of Maven command
+RESULT=$?
+
+# If command failed, abort the commit
+if [ $RESULT -ne 0 ]; then
+    echo "Git pre-commit verification failed"
+    exit 1
+fi
+
+# If the command succeeded, allow the commit to proceed
+exit 0

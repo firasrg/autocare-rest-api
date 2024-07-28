@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class CarController {
 
-    private final CarService carService;
+  private final CarService carService;
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> getComplexCars() {
-        String jsonString = carService.getComplexJson();
-        return ResponseEntity.ok(jsonString);
-    }
+  @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<String> getComplexCars() {
+    String jsonString = carService.getComplexJson();
+    return ResponseEntity.ok(jsonString);
+  }
 }
