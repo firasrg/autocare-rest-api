@@ -11,48 +11,40 @@ The Car Data Service API is a Spring Boot application designed to expose compreh
 
 ## Technology Stack
 
-- **Spring Boot**: Version 3.2
-- **Java**: Version 17
-- **JPA**: For database access
-- **Jackson**: For JSON conversion
-- **H2 Database**: For in-memory database support
+- **Framework**: [Spring Boot](https://docs.spring.io/spring-boot/index.html) v3.2 (Spring v6)
+- **Languages**: Java v17
+- **Build Tool**: [Maven](https://maven.apache.org/) v3.9
+- **Code Formatting**: [Checkstyle](https://checkstyle.sourceforge.io/) and [Spotless](https://github.com/diffplug/spotless)
+- **Version Control**: Git
 
 ## Getting Started
 
-### Prerequisites
-
-- Java 17
-- Maven (for building the project)
-- H2 database configuration (pre-configured for in-memory use)
-
 ### Installation
 
-1. **Clone the Repository**
+1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/car-data-service-api.git
-cd car-data-service-api
+git clone <GITHUB_REPOSITORY_URL>
+cd car-service-rest-api
 ```
 
-2. **Build the project**
+2. **Build**
 ```bash 
-mvn clean install
+./mvnw clean install
 ```
 
-3. **Run the Application**
+3. **Run**
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=demo
 ```
-
-### Configuration
-The `LoadDataConfig` class, which populates the database with sample data, is configured to run with the "demo" profile. Ensure to use this profile to load sample data.
+_Note: The app doesn't have endpoints to do CRUD operations yet. The `demo` profile refers to `../configs/LoadDatabase`, which helps to fill database with fictive data at runtime._
 
 ### Usage
 **Endpoint**: `/api/cars`
 
 **Method**: `GET`
 
-**Response Example:**
+**Response :**
 ```json
 [
     {
@@ -78,6 +70,28 @@ The `LoadDataConfig` class, which populates the database with sample data, is co
 ```
 
 
+## Code Quality and Maintenance
 
+To maintain a consistent code style and ensure high code quality, we have integrated several tools and practices into our project:
 
+### Code Formatting
 
+1. **Spotless**: Ensures that the code adheres to defined formatting rules. Spotless helps keep the codebase clean and uniformly formatted.
+
+2. **Checkstyle**: Assists in writing code that conforms to Java standard coding practices. It enforces a set of coding standards and helps maintain good quality.
+
+_Note: If you're new to these tools, there’s no need to worry. They are already configured and will work seamlessly in the background._
+
+### Git Hooks
+
+To ensure code quality and proper branching, we use Git hooks managed by the [**Git Build Hook Maven Plugin**](https://github.com/rudikershaw/git-build-hook). This plugin facilitates the management of hook scripts (check `./configs/git-hooks/pre-commit` file). 
+
+This technique helps prevent poorly formatted or non-compliant code from being committed or pushed.
+
+Currently, there are 2 sorts of hooks :
+1. **Pre-commit**: Automatically format code and run checks before allowing a commit. If issues are found, the commit will be aborted until the issues are resolved.
+
+2. **Pre-push**: (check the [next section](#branch-naming-convention))
+
+### Branch Naming Convention
+To maintain clarity and consistency, we follow a structured branch naming convention. A pre-push Git hook is in place to enforce this convention (check `./configs/git-hooks/pre-push` file).
