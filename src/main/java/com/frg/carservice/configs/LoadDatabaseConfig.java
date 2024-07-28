@@ -19,42 +19,43 @@ import org.springframework.context.annotation.Profile;
 @Profile("demo")
 public class LoadDatabaseConfig {
 
-    @Bean
-    CommandLineRunner initDatabase(UserRepository userRepository,
-                                   CarRepository carRepository,
-                                   ClientRepository clientRepository,
-                                   MaintainerRepository maintainerRepository,
-                                   ToolRepository toolRepository) {
-        return args -> {
-            User user1 = new User();
-            user1.setName("John Doe");
-            user1.setEmail("john.doe@example.com");
-            userRepository.save(user1);
+  @Bean
+  CommandLineRunner initDatabase(
+      UserRepository userRepository,
+      CarRepository carRepository,
+      ClientRepository clientRepository,
+      MaintainerRepository maintainerRepository,
+      ToolRepository toolRepository) {
+    return args -> {
+      User user1 = new User();
+      user1.setName("John Doe");
+      user1.setEmail("john.doe@example.com");
+      userRepository.save(user1);
 
-            Client client1 = new Client();
-            client1.setName("Client One");
-            clientRepository.save(client1);
+      Client client1 = new Client();
+      client1.setName("Client One");
+      clientRepository.save(client1);
 
-            Maintainer maintainer1 = new Maintainer();
-            maintainer1.setName("Technician One");
-            maintainerRepository.save(maintainer1);
+      Maintainer maintainer1 = new Maintainer();
+      maintainer1.setName("Technician One");
+      maintainerRepository.save(maintainer1);
 
-            Car car1 = new Car();
-            car1.setModel("Model S");
-            car1.setMake("Tesla");
-            car1.setClient(client1);
-            car1.setMaintainer(maintainer1);
-            carRepository.save(car1);
+      Car car1 = new Car();
+      car1.setModel("Model S");
+      car1.setMake("Tesla");
+      car1.setClient(client1);
+      car1.setMaintainer(maintainer1);
+      carRepository.save(car1);
 
-            Tool tool1 = new Tool();
-            tool1.setName("Wrench");
-            tool1.setMaintainer(maintainer1);
-            toolRepository.save(tool1);
+      Tool tool1 = new Tool();
+      tool1.setName("Wrench");
+      tool1.setMaintainer(maintainer1);
+      toolRepository.save(tool1);
 
-            Tool tool2 = new Tool();
-            tool2.setName("Screwdriver");
-            tool2.setMaintainer(maintainer1);
-            toolRepository.save(tool2);
-        };
-    }
+      Tool tool2 = new Tool();
+      tool2.setName("Screwdriver");
+      tool2.setMaintainer(maintainer1);
+      toolRepository.save(tool2);
+    };
+  }
 }
