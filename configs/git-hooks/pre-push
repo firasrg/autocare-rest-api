@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# Pre-push hook
+#
+
+# get current branch name
+branch_name=$(git symbolic-ref --short HEAD)
+
+# define regex pattern for allowed branch names
+branch_pattern="^(feature|bugfix|hotfix|release)\/[0-9]+-[a-z0-9\-]+$"
+
+# check if the branch name matches the pattern
+if ! echo "$branch_name" | grep -Eq "$branch_pattern"; then
+    echo "Error: branch name '$branch_name' does not follow the naming convention."
+    echo "Allowed patterns are :"
+    echo "  - feature/<issue-number>-<short-description>"
+    echo "  - bugfix/<issue-number>-<short-description>"
+    echo "  - hotfix/<issue-number>-<short-description>"
+    echo "  - release/<version-number>"
+    exit 1
+fi
+
+# allow push to proceed if branch name is valid
+exit 0
