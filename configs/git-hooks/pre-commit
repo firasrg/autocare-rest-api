@@ -6,7 +6,7 @@
 # Run the Maven verify command
 ./mvnw verify --offline
 
-# capture exit status of Maven command
+# Capture exit status of Maven command
 RESULT=$?
 
 # If command failed, abort the commit
@@ -15,5 +15,11 @@ if [ $RESULT -ne 0 ]; then
     exit 1
 fi
 
-# If the command succeeded, allow the commit to proceed
+# Check for changes made by Spotless
+if ! git diff --cached --quiet; then
+    echo "Spotless made changes, adding them to the commit..."
+    git add .
+fi
+
+# If everything is okay, allow the commit to proceed
 exit 0
