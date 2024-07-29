@@ -5,10 +5,10 @@ import com.frg.carservice.entities.Car;
 import com.frg.carservice.entities.Tool;
 import com.frg.carservice.repository.CarRepository;
 import com.frg.carservice.repository.ToolRepository;
+import com.frg.carservice.technical.ModelObject;
 import com.frg.carservice.technical.ModelObjectBuilder;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +21,9 @@ public class CarService {
 
   private final ObjectMapper mapper = new ObjectMapper();
 
-  public String getComplexJson() {
+  public String getAll() {
     List<Car> cars = carRepository.findAll();
-    List<Map<String, Object>> carList = new ArrayList<>();
+    List<ModelObject> carList = new ArrayList<>();
 
     for (Car car : cars) {
       ModelObjectBuilder carBuilder =
@@ -35,18 +35,19 @@ public class CarService {
               .addAttribute("maintainerName", car.getMaintainer().getName());
 
       List<Tool> tools = toolRepository.findToolsByMaintainerId(car.getMaintainer().getId());
-      ModelObjectBuilder[] toolBuilders =
+      ModelObject[] toolBuilders =
           tools.stream()
               .map(
                   tool ->
                       ModelObjectBuilder.createBuilder()
                           .addAttribute("id", tool.getId())
-                          .addAttribute("name", tool.getName()))
-              .toArray(ModelObjectBuilder[]::new);
+                          .addAttribute("name", tool.getName())
+                          .build())
+              .toArray(ModelObject[]::new);
 
       carBuilder.addArrayAttribute("tools", toolBuilders);
 
-      Map<String, Object> finalBuilder =
+      ModelObject finalBuilder =
           ModelObjectBuilder.createBuilder().addAttribute("car", carBuilder.build()).build();
 
       carList.add(finalBuilder);

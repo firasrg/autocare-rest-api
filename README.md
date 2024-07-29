@@ -2,12 +2,22 @@
 
 ## Overview
 
-The Car Data Service API is a Spring Boot application designed to expose comprehensive data about cars and related entities through a single endpoint. It uses a custom JSON builder to structure the data.
+The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution for managing car service systems. This developer-friendly project is designed to enhance proficiency with modern Spring applications, providing hands-on experience with real-world scenarios and best practices for backend development.
+
+**Goals** :
+
+- Enhance problem-solving skills by tackling real-world challenges.
+- Gain hands-on experience in modern web backend development.
+- Improve proficiency in Java and related frameworks.
+- Master Git for version control, including branching and merging.
+- Learn to effectively use GitHub for repositories, issues, pull requests, and discussions.
+- Develop skills in documentation and testing.
+- And more!
 
 ## Features
 
-- **Expose Car Data**: Retrieve detailed information about cars, including related entities like clients, maintainers, and tools.
-- **Custom JSON Structure**: Generate JSON responses with a custom JSON builder, maintaining the order of attributes.
+- **Expose Cars data**: Retrieve detailed information about cars, including related entities like clients, maintainers, and tools.
+- **Custom JSON structure**: Generate JSON responses with a custom JSON builder, maintaining the order of attributes.
 
 ## Technology Stack
 
@@ -37,7 +47,7 @@ cd car-service-rest-api
 ```bash
 mvn spring-boot:run -Dspring-boot.run.profiles=demo
 ```
-_Note: The app doesn't have endpoints to do CRUD operations yet. The `demo` profile refers to `../configs/LoadDatabase`, which helps to fill database with fictive data at runtime._
+_Note: Currently, the app doesn't have endpoints for CRUD operations yet. The `demo` profile refers to `../configs/LoadDatabase`, which helps to fill database with some data at runtime._
 
 ### Usage
 **Endpoint**: `/api/cars`
