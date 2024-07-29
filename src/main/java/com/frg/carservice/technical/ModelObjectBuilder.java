@@ -1,50 +1,33 @@
 package com.frg.carservice.technical;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+public final class ModelObjectBuilder {
 
-public class ModelObjectBuilder {
-  private final Map<String, Object> jsonObject;
+  private final ModelObject modelObject;
 
   private ModelObjectBuilder() {
-    this.jsonObject = new LinkedHashMap<>();
+    this.modelObject = new ModelObject();
   }
 
   public static ModelObjectBuilder createBuilder() {
     return new ModelObjectBuilder();
   }
 
-  public ModelObjectBuilder addAttribute(String key, String value) {
-    jsonObject.put(key, value);
+  public ModelObjectBuilder addAttribute(String key, Object value) {
+    this.modelObject.addAttribute(key, value);
     return this;
   }
 
-  public ModelObjectBuilder addAttribute(String key, long value) {
-    jsonObject.put(key, value);
+  public ModelObjectBuilder addAttribute(String key, ModelObject value) {
+    this.modelObject.addAttribute(key, value);
     return this;
   }
 
-  public ModelObjectBuilder addAttribute(String key, Map<String, Object> value) {
-    jsonObject.put(key, value);
+  public ModelObjectBuilder addArrayAttribute(String key, ModelObject... values) {
+    this.modelObject.addArrayAttribute(key, values);
     return this;
   }
 
-  public ModelObjectBuilder addAttribute(String key, ModelObjectBuilder builder) {
-    jsonObject.put(key, builder.build());
-    return this;
-  }
-
-  public void addArrayAttribute(String key, ModelObjectBuilder... builders) {
-    List<Map<String, Object>> jsonArray = new ArrayList<>();
-    for (ModelObjectBuilder builder : builders) {
-      jsonArray.add(builder.build());
-    }
-    jsonObject.put(key, jsonArray);
-  }
-
-  public Map<String, Object> build() {
-    return jsonObject;
+  public ModelObject build() {
+    return this.modelObject;
   }
 }

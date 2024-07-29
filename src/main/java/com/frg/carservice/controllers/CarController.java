@@ -17,7 +17,7 @@ public class CarController {
 
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<String> getComplexCars() {
-    String jsonString = carService.getComplexJson();
+    String jsonString = carService.getAll();
     return ResponseEntity.ok(jsonString);
   }
 }
