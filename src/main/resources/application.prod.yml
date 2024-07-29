@@ -1,0 +1,18 @@
+server:
+  port: 443
+  connection-timeout: 5000
+  keep-alive-timeout: 3000
+  max-threads: 1000
+
+spring:
+  datasource:
+    url: jdbc:mysql://prod-db-server:3306/mydb
+    username: produser
+    password: prodpass
+
+server:
+  ssl:
+    key-store: classpath:ssl/keystore.p12
+    key-store-password: secret
+    key-store-type: PKCS12
+    key-alias: mykey
