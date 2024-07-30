@@ -45,40 +45,33 @@ cd car-service-rest-api
 
 3. **Run**
 ```bash
-mvn spring-boot:run -Dspring-boot.run.profiles=demo
+./mvnw spring-boot:run "-Dspring-boot.run.profiles=demo"
 ```
-_Note: Currently, the app doesn't have endpoints for CRUD operations yet. The `demo` profile refers to `../configs/LoadDatabase`, which helps to fill database with some data at runtime._
+_Note: Currently, the app doesn't have endpoints for CRUD operations yet (except one `GET/api/cars`). The `demo` profile refers to `../configs/LoadDatabase`, which helps to fill database with some data at runtime._
 
-### Usage
-**Endpoint**: `/api/cars`
+4. **Check Endpoint**:
 
-**Method**: `GET`
+From Web-browser (or Postman) check the following URL `http://localhost:8080/api/cars` with `GET` HTTP method :
 
-**Response :**
-```json
-[
-    {
-        "car": {
-            "id": 1,
-            "model": "Model S",
-            "make": "Tesla",
-            "clientName": "Client One",
-            "maintainerName": "Technician One",
-            "tools": [
-                {
-                    "id": 1,
-                    "name": "Wrench"
-                },
-                {
-                    "id": 2,
-                    "name": "Screwdriver"
-                }
-            ]
-        }
-    }
-]
+![docs/endpoint-test.png](docs/endpoint-test.png)
+
+5. **Check Database**:
+
+We use [H2 Database](https://www.h2database.com/html/main.html) to demonstrate the app while in DEV mode. SpringBoot autoconfigures H2 database :
+
+Check the app's log, make sure to have something like this :
+```bash
+INFO ... Added connection conn0: url=jdbc:h2:mem:a917d8a4-bb16-46a1-84a4-f59d60f01ca8 user=SA
+INFO ... H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:a917d8a4-bb16-46a1-84a4-f59d60f01ca8'
 ```
 
+Next, from web-browser, try the following URL : `http://localhost:8080/h2-console`. This will take you to H2 console webpage: 
+
+![docs/h2-login.png](docs/h2-login.png)
+
+Copy, paste your database URL and username from your app's log and press on `Connect` button :
+
+![docs/h2-db-view.png](docs/h2-db-view.png)
 
 ## Code Quality and Maintenance
 
