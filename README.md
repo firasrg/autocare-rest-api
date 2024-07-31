@@ -7,17 +7,15 @@ The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution fo
 **Goals** :
 
 - Enhance problem-solving skills by tackling real-world challenges.
-- Gain hands-on experience in modern web backend development.
+- Gain hands-on experience in modern Web Applications.
 - Improve proficiency in Java and related frameworks.
-- Master Git for version control, including branching and merging.
-- Learn to effectively use GitHub for repositories, issues, pull requests, and discussions.
+- Learn how to effectively use [GitHub](https://github.com/).
 - Develop skills in documentation and testing.
-- And more!
 
 ## Features
 
 - **Expose Cars data**: Retrieve detailed information about cars, including related entities like clients, maintainers, and tools.
-- **Custom JSON structure**: Generate JSON responses with a custom JSON builder, maintaining the order of attributes.
+- **Custom JSON builder**: Generate JSON responses with a customizable JSON builder component.
 
 ## Technology Stack
 
@@ -28,8 +26,6 @@ The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution fo
 - **Version Control**: Git
 
 ## Getting Started
-
-### Installation
 
 1. **Clone the repository**
 
@@ -73,28 +69,11 @@ Copy, paste your database URL and username from your app's log and press on `Con
 
 ![docs/h2-db-view.png](docs/h2-db-view.png)
 
-## Code Quality and Maintenance
+There you go 🎉!
 
-To maintain a consistent code style and ensure high code quality, we have integrated several tools and practices into our project:
+## Contributing 
 
-### Code Formatting
+If you want to dive in this project and help us to improve it, please read and follow our [contributing guidelines](./CONTRIBUTING.md).
 
-1. **Spotless**: Ensures that the code adheres to defined formatting rules. Spotless helps keep the codebase clean and uniformly formatted.
-
-2. **Checkstyle**: Assists in writing code that conforms to Java standard coding practices. It enforces a set of coding standards and helps maintain good quality.
-
-_Note: If you're new to these tools, there’s no need to worry. They are already configured and will work seamlessly in the background._
-
-### Git Hooks
-
-To ensure code quality and proper branching, we use Git hooks managed by the [**Git Build Hook Maven Plugin**](https://github.com/rudikershaw/git-build-hook). This plugin facilitates the management of hook scripts (check `./configs/git-hooks/pre-commit` file). 
-
-This technique helps prevent poorly formatted or non-compliant code from being committed or pushed.
-
-Currently, there are 2 sorts of hooks :
-1. **Pre-commit**: Automatically format code and run checks before allowing a commit. If issues are found, the commit will be aborted until the issues are resolved.
-
-2. **Pre-push**: (check the [next section](#branch-naming-convention))
-
-### Branch Naming Convention
-To maintain clarity and consistency, we follow a structured branch naming convention. A pre-push Git hook is in place to enforce this convention (check `./configs/git-hooks/pre-push` file).
+## Community
+You can join us on [Together Java Discord server](https://discord.com/channels/272761734820003841/1265407633758883870): brainstorm ideas, ask questions, and collaborate with others. Be respectful and follow the server guidelines. We have a dedicated channel for this project.
