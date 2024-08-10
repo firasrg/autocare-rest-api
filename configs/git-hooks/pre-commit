@@ -4,7 +4,7 @@
 #
 
 # Run the Maven verify command
-./mvnw verify --offline
+./mvnw  spotless:apply verify --offline
 
 # Capture exit status of Maven command
 RESULT=$?
