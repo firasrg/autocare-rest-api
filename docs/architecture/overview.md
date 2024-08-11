@@ -1,4 +1,4 @@
-# Car Service System Overview
+# Car Services System - Architectural Overview
 
 NOTE⚠️: _Reading this document may lead to a different perception of the project compared to what is written in the [README](../../README.md) file, so that it will appear to readers as a real software product of high quality, directed to real customers and available for sale/purchase. From this point, the developers and testers are expected to interact with the system as real users (non developers). We would like this to be the goal_ 😁 _, because technologies employed in this project, are mostly used for **enterprise** purpose, and we want to help developers to learn how to deal with such projects in an entertaining manner. It's worth noting that this project remains dedicated for learning objectives. In case you think about using this project for commercial uses, we remind you to read its [licence](../../LICENSE) carefully before you start._
 
@@ -32,21 +32,40 @@ To further clarify the system’s design, **[UML](https://en.wikipedia.org/wiki/
 
 ## System Components
 
-This section is about splitting the project's _Primary Business Objective_ into pieces, also known as components.
+This section is about splitting the project's _Primary Business Objective_ into main pieces, also known as components.
 
-### Car Management
+### Cars Management
 
-This component is focused on Car-related entities. It's composed of the following subcomponents.
+This component is focused on both car-related entities and customer interactions. It's considered a core component.
 
-1. **Cars**: Manage cars based on some characteristics like size, brand, type, etc...
-2. **Issues**: Handle car issues like fixes, washes, parts replacement, exchanges, etc...
-3. **Accessories**: Tracks and manage accessories available for cars.
+It's composed of the following subcomponents.
 
-### Customer Management
-This component handles customer entities and their interactions with the system. It includes the following subcomponents:
+1. **Customers**: Manages customer information, whether they are individuals or companies. This subcomponent is essential for personalizing services and maintaining customer relationships.
+2. **Subscriptions**: Manages subscription-based offers and service packages available to customers. This subcomponent allows customers to subscribe to various service plans, track subscription details, handle renewals, and manage associated benefits.
+3. **Cars**: Manages cars based on some characteristics like size, brand, type, etc...
+4. **Issues**: Handles cars issues like fixes, upgrades, washes, parts replacement, painting, etc...
+5. **Accessories**: Tracks and manage accessories available for cars.
 
 ### Staff Management
-### Garage Management
-### Car-Service Scheduling
+
+This component is responsible for managing staff-related entities and operations. It includes the following subcomponents:
+
+1. **Staff**: Handles information about staff members, including managers, commercial agents, maintainers, and workers. This subcomponent ensures that the right personnel are assigned to the appropriate tasks.
+2. **Schedules**: Manages staff schedules, ensuring efficient allocation of resources and timely delivery of services.
+
+### Garages and Tools Management
+
+This component focuses on managing the physical resources required for car services. It includes the following subcomponents:
+
+1. **Garages**: Manages information about garages, including their location, equipments, capacity, and availability.
+2. **Tools**: Tracks and manages the tools available in the garages.
+
 ### Financial Management
+
+This component handles the financial aspects of the system. It includes the following subcomponents:
+
+1. **Payments**: Manages payment processing for services provided. This subcomponent ensures that transactions are handled securely and efficiently.
+2. **Quotes**: Generates and manages quotes for car services. This subcomponent supports the sales process by providing customers with accurate and timely service estimates.
+3. **Policies**: Manages the policies that govern the financial transactions within the system, including payment terms, refund policies, and discounts.
+
 
