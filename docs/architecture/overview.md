@@ -1,4 +1,4 @@
-# Car Services System - Architectural Overview
+# Car Services System - Overview
 
 NOTE⚠️: _Reading this document may lead to a different perception of the project compared to what is written in the [README](../../README.md) file, so that it will appear to readers as a real software product of high quality, directed to real customers and available for sale/purchase. From this point, the developers and testers are expected to interact with the system as real users (non developers). We would like this to be the goal_ 😁 _, because technologies employed in this project, are mostly used for **enterprise** purpose, and we want to help developers to learn how to deal with such projects in an entertaining manner. It's worth noting that this project remains dedicated for learning objectives. In case you think about using this project for commercial uses, we remind you to read its [licence](../../LICENSE) carefully before you start._
 
@@ -97,4 +97,4 @@ This component handles the financial aspects of the system. It includes the foll
 4. **Policies**: Manages the policies that govern the financial transactions within the system, including payment terms, refund policies, and discounts.
 
 ## What's Next?
-Now, that we saw the big picture of the project, it'd obvious to dive in details. This means translating the [business components](#system-business-components) discussed above into [**models**](./modeling-and-design).
+Now, that we saw the big picture of the project, it'd obvious to dive in details. This means translating the [business components](#system-business-components) discussed above into [**models**](./modeling-and-design.md).

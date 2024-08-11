@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.frg</groupId>
-	<artifactId>car-service-rest-api</artifactId>
+	<artifactId>car-services-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>car-service-rest-api</name>
-	<description>Car service management system</description>
+	<name>car-services-rest-api</name>
+	<description>Car services management system</description>
 	<url/>
 	<licenses>
 		<license/>

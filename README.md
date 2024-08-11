@@ -1,4 +1,4 @@
-# Car Service REST API sample
+# Car Services Management System REST API Sample
 
 [![Code Analysis](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml/badge.svg)](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml)
 [![java-version](https://img.shields.io/badge/Java-17-f0fc03)](https://img.shields.io/badge/Java-17-f0fc03)
@@ -10,23 +10,24 @@
 
 ## Overview
 
-The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution for managing car service systems. This developer-friendly project is designed to enhance proficiency with modern Spring applications, providing hands-on experience with real-world scenarios and best practices for backend development.
+The **Car Services Management System** 🚗🧑‍🔧 REST API offers a comprehensive solution for managing a fictive car services system.
 
-**Goals** :
+The main goals of this project are :
 
-- Enhance problem-solving skills by tackling real-world challenges.
+- Enhance problem-solving skills by tackling real-world business needs.
 - Gain hands-on experience in modern Web Applications.
-- Improve proficiency in Java and related frameworks.
-- Learn how to effectively use [GitHub](https://github.com/).
-- Develop skills in documentation and testing.
+- Improve proficiency in [Java](https://www.java.com/en/download/help/whatis_java.html) and related frameworks.
+- Develop skills in software documentation and testing.
 
-## Features
+## Characteristics
+Currently, the project is too small, and misses some requirements to reach a completed first release. However, the current version provides a demonstration: 
 
 - **Expose Cars data**: Retrieve detailed information about cars, including related entities like clients, maintainers, and tools.
 - **Custom JSON builder**: Generate JSON responses with a customizable JSON builder component.
 
 ## Technology Stack
 
+- **Modeling**: UML v2 or higher
 - **Framework**: [Spring Boot](https://docs.spring.io/spring-boot/index.html) v3.2 (Spring v6)
 - **Languages**: Java v17
 - **Build Tool**: [Maven](https://maven.apache.org/) v3.9
