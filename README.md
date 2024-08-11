@@ -1,5 +1,13 @@
 # Car Service REST API sample
 
+[![Code Analysis](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml/badge.svg)](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml)
+[![java-version](https://img.shields.io/badge/Java-17-f0fc03)](https://img.shields.io/badge/Java-17-f0fc03)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=firasrg_car-service-rest-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=firasrg_car-service-rest-api)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=firasrg_car-service-rest-api&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=firasrg_car-service-rest-api)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=firasrg_car-service-rest-api&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=firasrg_car-service-rest-api)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=firasrg_car-service-rest-api&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=firasrg_car-service-rest-api)
+
 ## Overview
 
 The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution for managing car service systems. This developer-friendly project is designed to enhance proficiency with modern Spring applications, providing hands-on experience with real-world scenarios and best practices for backend development.
