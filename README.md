@@ -57,7 +57,7 @@ _Note: Currently, the app doesn't have endpoints for CRUD operations yet (except
 
 From Web-browser (or Postman) check the following URL `http://localhost:8080/api/cars` with `GET` HTTP method :
 
-![docs/endpoint-test.png](docs/endpoint-test.png)
+![docs/endpoint-test.png](docs/images/endpoint-test.png)
 
 5. **Check Database**:
 
@@ -71,11 +71,11 @@ INFO ... H2 console available at '/h2-console'. Database available at 'jdbc:h2:m
 
 Next, from web-browser, try the following URL : `http://localhost:8080/h2-console`. This will take you to H2 console webpage: 
 
-![docs/h2-login.png](docs/h2-login.png)
+![docs/h2-login.png](docs/images/h2-login.png)
 
 Copy, paste your database URL and username from your app's log and press on `Connect` button :
 
-![docs/h2-db-view.png](docs/h2-db-view.png)
+![docs/h2-db-view.png](docs/images/h2-db-view.png)
 
 There you go 🎉!
 
