@@ -17,7 +17,7 @@ This section is about setting the _Primary Business Objective (BO)_ of the **Car
 
 ### What is it (What?)
 
-Comprehensive [Web application](https://en.wikipedia.org/wiki/Web_application) designed to streamline and manage car services efficiently. It provides an organized and client-friendly interface for managing car-related services, including repairs, maintenance, and customer requests and more.
+Comprehensive [Web application](https://en.wikipedia.org/wiki/Web_application) designed to streamline and manage car services efficiently. It provides an organized and client-friendly interface for managing car-related services, including repairs, maintenance, customer requests and more.
 
 ### Reason (Why?)
 
@@ -25,11 +25,9 @@ To enhance customer satisfaction and operational efficiency, by providing a cent
 
 ### Implementation (How?)
 
-The system achieves its objectives by leveraging modern web technologies and best practices in software development. The system is developed using [Spring Boot](https://spring.io/projects/spring-boot), a robust [Java](https://www.java.com/en/download/help/whatis_java.html)-based framework, and is designed with scalability, flexibility, and user experience in mind.
+By using [Spring Boot](https://spring.io/projects/spring-boot), a robust [Java](https://www.java.com/en/download/help/whatis_java.html)-based framework, designed with scalability, flexibility, security, persistence and more. The development process is based on the [12-factor](https://12factor.net/) methodology, ensuring it as a modern cloud-native application.
 
-The development process is based on the [12-factor](https://12factor.net/) methodology, ensuring it is a modern cloud-native application.
-
-The [REST](https://restfulapi.net/) API setup will follow the [**MVC pattern**](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) to maintain clear separation between the model, view, and controller layers. [**Domain-Driven Design (DDD)**](https://en.wikipedia.org/wiki/Domain-driven_design) will be used to distinguish competitive features from normal ones, ensuring the system focuses on delivering value where it matters most.
+The system is a [REST](https://restfulapi.net/) API, following the [**MVC pattern**](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller), to maintain clear separation between the model, view, and controller layers. [**Domain-Driven Design (DDD)**](https://en.wikipedia.org/wiki/Domain-driven_design) will be used to distinguish competitive features from normal ones, ensuring the system focuses on delivering value where it matters most.
 
 To further clarify the system’s design, **[UML](https://en.wikipedia.org/wiki/Unified_Modeling_Language) diagrams** illustrate:
 - Actors, scenarios, and relationships;
@@ -37,14 +35,19 @@ To further clarify the system’s design, **[UML](https://en.wikipedia.org/wiki/
 - Abstractions and enums;
 - Database tables and their relationships;
 
-## System Components
+## System Business Components
 
-This section is about splitting the project's _Primary Business Objective_ into main pieces, also known as components.
+NOTE⚠️: _The following information are preliminary details concluded from a renewable review on the project at its current state. It's highly recommended to do refinements on these information along with the development process, as new concerns or challenges may appear on the road._
 
+This section is about splitting the project's _Primary Business Objective_ into main pieces, also known as business components:
+
+1. Cars Management
+2. Resource Management
+3. Financial Management
 
 ![overview.png](../images/architecture/overview.png)
 
-_Note: The diagrams [source file](./diagrams.drawio) is available for reuses. You can download from GitHub and open it on [draw.io](https://app.diagrams.net/) for free._ 
+NOTE⚠️:_The diagrams [source file](./diagrams.drawio) is available for reuses. You can download from GitHub and open it on [draw.io](https://app.diagrams.net/) for free._ 
 
 ### Cars Management
 
@@ -93,11 +96,5 @@ This component handles the financial aspects of the system. It includes the foll
 
 4. **Policies**: Manages the policies that govern the financial transactions within the system, including payment terms, refund policies, and discounts.
 
-## Entity Modeling
-
-### Actors
-
-### Use-Cases
-
-
-
+## What's Next?
+Now, that we saw the big picture of the project, it'd obvious to dive in details. This means translating the [business components](#system-business-components) discussed above into [**models**](./modeling-and-design).
