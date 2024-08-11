@@ -4,6 +4,13 @@ NOTE⚠️: _Reading this document may lead to a different perception of the pro
 
 NOTE⚠️: _The current code-base of the project was made quickly without thinking too much about long term objectives. With this document, it would be obvious to review the code-base and refactor it based on the information provided here. Thus, a new issue should be created for this [heavy] work._
 
+## Motivation
+In software development, understanding the problem before diving into code is crucial. Jumping straight into coding without proper analysis often leads to what architects call a ["big ball of mud"](https://en.wikipedia.org/wiki/Anti-pattern#Software_engineering_anti-patterns)—a disorganized, unsustainable codebase that can cause projects to fail. 
+
+Successful developers prioritize modeling and planning to create a clear overview of the problem, which helps in crafting a well-structured and maintainable solution. Striving for perfection in this stage, even if it’s never fully achieved, ensures a robust and scalable system that can evolve over time.
+
+👉 This project, is a deliberate effort to apply these principles, aiming to build a well-organized and efficient solution from the ground up.
+
 ## Primary Business-Objective (BO)
 
 This section is about setting the _Primary Business Objective (BO)_ of the **Car Service** system, once it's ascertained, in terms of the “what, why, and how” of it, that objective is systematically broken down into small pieces based on prioritization.
@@ -34,7 +41,10 @@ To further clarify the system’s design, **[UML](https://en.wikipedia.org/wiki/
 
 This section is about splitting the project's _Primary Business Objective_ into main pieces, also known as components.
 
+
 ![overview.png](../images/architecture/overview.png)
+
+_Note: The diagrams [source file](./diagrams.drawio) is available for reuses. You can download from GitHub and open it on [draw.io](https://app.diagrams.net/) for free._ 
 
 ### Cars Management
 
@@ -82,4 +92,12 @@ This component handles the financial aspects of the system. It includes the foll
 
 
 4. **Policies**: Manages the policies that govern the financial transactions within the system, including payment terms, refund policies, and discounts.
+
+## Entity Modeling
+
+### Actors
+
+### Use-Cases
+
+
 
