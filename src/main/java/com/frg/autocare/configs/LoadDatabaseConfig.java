@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Load database configuration component.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Load database configuration component.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.configs;
+package com.frg.autocare.configs;
 
-import com.frg.carservice.entities.Car;
-import com.frg.carservice.entities.Client;
-import com.frg.carservice.entities.Maintainer;
-import com.frg.carservice.entities.Tool;
-import com.frg.carservice.entities.User;
-import com.frg.carservice.repository.CarRepository;
-import com.frg.carservice.repository.ClientRepository;
-import com.frg.carservice.repository.MaintainerRepository;
-import com.frg.carservice.repository.ToolRepository;
-import com.frg.carservice.repository.UserRepository;
+import com.frg.autocare.entities.Car;
+import com.frg.autocare.entities.Client;
+import com.frg.autocare.entities.Maintainer;
+import com.frg.autocare.entities.Tool;
+import com.frg.autocare.entities.User;
+import com.frg.autocare.repository.CarRepository;
+import com.frg.autocare.repository.ClientRepository;
+import com.frg.autocare.repository.MaintainerRepository;
+import com.frg.autocare.repository.ToolRepository;
+import com.frg.autocare.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

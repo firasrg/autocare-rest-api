@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Application's main class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Tool repository component.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,15 +15,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice;
+package com.frg.autocare.repository;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.frg.autocare.entities.Tool;
+import java.util.List;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-@SpringBootApplication
-public class CarServiceApplication {
-
-  public static void main(String[] args) {
-    SpringApplication.run(CarServiceApplication.class, args);
-  }
+@Repository
+public interface ToolRepository extends CrudRepository<Tool, Long> {
+  @Query("SELECT t FROM Tool t WHERE t.maintainer.id = :maintainerId")
+  List<Tool> findToolsByMaintainerId(@Param("maintainerId") Long maintainerId);
 }

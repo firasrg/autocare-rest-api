@@ -1,6 +1,6 @@
 #
-# Car Service REST API - Application properties configuration.
-# Copyright (C) 2024  Car Service REST API original author or authors.
+# AutoCare REST API - Application properties configuration.
+# Copyright (C) 2024  AutoCare REST API original author or authors.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published
@@ -17,7 +17,7 @@
 #
 spring:
   application:
-    name: car-service-rest-api
+    name: autocare-rest-api
   h2:
     console:
       enabled: true

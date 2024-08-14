@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Car controller class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Car controller class.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.controllers;
+package com.frg.autocare.controllers;
 
-import com.frg.carservice.services.CarService;
+import com.frg.autocare.services.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

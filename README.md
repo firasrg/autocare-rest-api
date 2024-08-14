@@ -1,6 +1,6 @@
-# Car Service REST API sample
+# AutoCare REST API Sample
 
-[![Code Analysis](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml/badge.svg)](https://github.com/firasrg/car-service-rest-api/actions/workflows/code-analysis.yaml)
+[![Code Analysis](https://github.com/firasrg/auto-care/actions/workflows/code-analysis.yaml/badge.svg)](https://github.com/firasrg/auto-care/actions/workflows/code-analysis.yaml)
 [![java-version](https://img.shields.io/badge/Java-17-f0fc03)](https://img.shields.io/badge/Java-17-f0fc03)
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=firasrg_car-service-rest-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=firasrg_car-service-rest-api)
@@ -10,7 +10,7 @@
 
 ## Overview
 
-The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution for managing car service systems. This developer-friendly project is designed to enhance proficiency with modern Spring applications, providing hands-on experience with real-world scenarios and best practices for backend development.
+The **AutoCare REST API** 🚗🧑‍🔧  offers a comprehensive solution for managing vehicle services . This developer-friendly project is designed to enhance proficiency with modern Spring applications, providing hands-on experience with real-world scenarios and best practices for backend development.
 
 **Goals** :
 
@@ -39,7 +39,7 @@ The **Car Service REST API** 🚗🧑‍🔧  offers a comprehensive solution fo
 
 ```bash
 git clone <GITHUB_REPOSITORY_URL>
-cd car-service-rest-api
+cd autocare-rest-api
 ```
 
 2. **Build**

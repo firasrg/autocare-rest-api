@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Technical model used to construct JSON objects with flexibility.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Technical model used to construct JSON objects with flexibility.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.technical;
+package com.frg.autocare.technical;
 
 public final class ModelObjectBuilder {
 

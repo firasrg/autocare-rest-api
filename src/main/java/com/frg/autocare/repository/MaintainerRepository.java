@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - IDE names constants class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Maintainer repository component.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.constants;
+package com.frg.autocare.repository;
 
-import lombok.experimental.UtilityClass;
+import com.frg.autocare.entities.Maintainer;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-@UtilityClass
-public class IDEs {
-  public static final String INTELLIJ_IDEA = "IntelliJ IDEA";
-}
+@Repository
+public interface MaintainerRepository extends CrudRepository<Maintainer, Long> {}
