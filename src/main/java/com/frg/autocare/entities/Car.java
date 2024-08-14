@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Maintainer entity class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Car entity class.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,16 +15,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.entities;
+package com.frg.autocare.entities;
 
-import com.frg.carservice.constants.IDEs;
+import com.frg.autocare.constants.IDEs;
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import java.util.List;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,16 +37,21 @@ import org.hibernate.proxy.HibernateProxy;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Maintainer {
+public class Car {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  private String model;
+  private String make;
 
-  @OneToMany(mappedBy = "maintainer")
-  @ToString.Exclude
-  private List<Car> cars;
+  @ManyToOne
+  @JoinColumn(name = "client_id")
+  private Client client;
+
+  @ManyToOne
+  @JoinColumn(name = "maintainer_id")
+  private Maintainer maintainer;
 
   @Override
   @Generated(IDEs.INTELLIJ_IDEA)
@@ -62,8 +67,8 @@ public class Maintainer {
             ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass()
             : this.getClass();
     if (thisEffectiveClass != oEffectiveClass) return false;
-    Maintainer that = (Maintainer) o;
-    return getId() != null && Objects.equals(getId(), that.getId());
+    Car car = (Car) o;
+    return getId() != null && Objects.equals(getId(), car.getId());
   }
 
   @Override

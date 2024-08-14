@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - User entity class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Tool entity class.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,15 +15,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.entities;
+package com.frg.autocare.entities;
 
-import com.frg.carservice.constants.IDEs;
+import com.frg.autocare.constants.IDEs;
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,14 +37,17 @@ import org.hibernate.proxy.HibernateProxy;
 @Setter
 @ToString
 @NoArgsConstructor
-@Table(name = "user_account")
-public class User {
+public class Tool {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private String name;
-  private String email;
+
+  @ManyToOne
+  @JoinColumn(name = "maintainer_id")
+  private Maintainer maintainer;
 
   @Override
   @Generated(IDEs.INTELLIJ_IDEA)
@@ -59,8 +63,8 @@ public class User {
             ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass()
             : this.getClass();
     if (thisEffectiveClass != oEffectiveClass) return false;
-    User user = (User) o;
-    return getId() != null && Objects.equals(getId(), user.getId());
+    Tool tool = (Tool) o;
+    return getId() != null && Objects.equals(getId(), tool.getId());
   }
 
   @Override

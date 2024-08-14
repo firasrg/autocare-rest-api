@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for considering contributing to the **Car Service REST API** ! By participating, you're helping to build a more reliable and feature-rich community project. Please take a moment to review these guidelines to ensure a smooth collaboration.
+Thank you for considering contributing to the **AutoCare REST API** ! By participating, you're helping to build a more reliable and feature-rich community project. Please take a moment to review these guidelines to ensure a smooth collaboration.
 
 ## Table of Content
 

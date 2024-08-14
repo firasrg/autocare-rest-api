@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Maintainer repository component.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Car repository component.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice.repository;
+package com.frg.autocare.repository;
 
-import com.frg.carservice.entities.Maintainer;
-import org.springframework.data.repository.CrudRepository;
+import com.frg.autocare.entities.Car;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MaintainerRepository extends CrudRepository<Maintainer, Long> {}
+public interface CarRepository extends JpaRepository<Car, Long> {}

@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.frg</groupId>
-	<artifactId>car-service-rest-api</artifactId>
+	<artifactId>autocare-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>car-service-rest-api</name>
-	<description>Car service management system</description>
+	<name>AutoCare Sample App</name>
+	<description>AutoCare is a management system sample built as a Spring Boot REST API</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -78,6 +78,9 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>firas1220/car-services</name>
+					</image>
 				</configuration>
 			</plugin>
 			<plugin>

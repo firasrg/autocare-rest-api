@@ -1,6 +1,6 @@
 /**
- * Car Service REST API - Application main tests class.
- * Copyright (C) 2024  Car Service REST API original author or authors.
+ * AutoCare REST API - Application's main class.
+ * Copyright (C) 2024  AutoCare REST API original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published
@@ -15,14 +15,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this application.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.frg.carservice;
+package com.frg.autocare;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-class CarServiceApplicationTests {
+@SpringBootApplication
+public class AutoCareApplication {
 
-  @Test
-  void contextLoads() {}
+  public static void main(String[] args) {
+    SpringApplication.run(AutoCareApplication.class, args);
+  }
 }
