@@ -28,6 +28,7 @@
 		<url/>
 	</scm>
 	<properties>
+		<docker.image.name>autocare-rest-api:latest</docker.image.name>
 		<java.version>17</java.version>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<springdoc.version>2.2.0</springdoc.version>
@@ -102,7 +103,17 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<imageName>${docker.image.name}</imageName> <!-- You can change this -->
+
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>build-image</goal>
+						</goals>
+					</execution>
+				</executions>
+
 			</plugin>
 			<plugin>
 				<groupId>com.diffplug.spotless</groupId>
