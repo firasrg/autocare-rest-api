@@ -28,7 +28,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<docker.image.name>autocare-rest-api:latest</docker.image.name>
+		<docker.image.name>${project.groupId}/${project.artifactId}:${project.version}</docker.image.name>
 		<java.version>17</java.version>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<springdoc.version>2.2.0</springdoc.version>
@@ -106,13 +106,6 @@
 					<imageName>${docker.image.name}</imageName> <!-- You can change this -->
 
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>build-image</goal>
-						</goals>
-					</execution>
-				</executions>
 
 			</plugin>
 			<plugin>
@@ -206,4 +199,25 @@
 			</plugin>
 		</plugins>
 	</build>
+	<profiles>
+		<profile>
+			<id>docker-build</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>build-image</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
