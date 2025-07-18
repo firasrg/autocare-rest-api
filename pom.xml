@@ -98,11 +98,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-           				 <name>com.frg/autocare-rest-api:${project.version}-${maven.build.timestamp}</name>
-            			<env>
-                			<BP_JVM_VERSION>17</BP_JVM_VERSION>
-            			</env>
-        			</image>
+						<name>${project.groupId}/${project.artifactId}:${project.version}</name>
+						<createdDate>${maven.build.timestamp}</createdDate>
+						<env>
+							<BP_JVM_VERSION>17</BP_JVM_VERSION>
+						</env>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -110,13 +111,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>build-image</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.diffplug.spotless</groupId>
