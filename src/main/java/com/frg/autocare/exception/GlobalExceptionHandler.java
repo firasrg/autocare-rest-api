@@ -17,10 +17,14 @@
  */
 package com.frg.autocare.exception;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import com.frg.autocare.enums.CarSortField;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -29,6 +33,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @RestControllerAdvice
 @Slf4j
@@ -90,4 +95,61 @@ public class GlobalExceptionHandler {
     log.error("{} error: {}", status, ex.getMessage());
     return new ResponseEntity<>(errorResponse, status);
   }
+  @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+  public ResponseEntity<Map<String, Object>> handleTypeMismatch(MethodArgumentTypeMismatchException ex, HttpServletRequest request) {
+    String paramName = ex.getName();
+    String invalidValue = ex.getValue() != null ? ex.getValue().toString() : "null";
+
+    String message;
+
+    if ("sortBy".equals(paramName)) {
+      String validValues = Arrays.stream(CarSortField.values())
+              .map(Enum::name)
+              .collect(Collectors.joining(", "));
+      message = String.format(
+              "Invalid value '%s' for parameter '%s'. Allowed values are: [%s].",
+              invalidValue, paramName, validValues
+      );
+    } else if ("sortDir".equals(paramName)) {
+      String validValues = Arrays.stream(Sort.Direction.values())
+              .map(Enum::name)
+              .collect(Collectors.joining(", "));
+      message = String.format(
+              "Invalid value '%s' for parameter '%s'. Allowed values are: [%s].",
+              invalidValue, paramName, validValues
+      );
+    } else {
+      message = String.format("Invalid value '%s' for parameter '%s'.", invalidValue, paramName);
+    }
+
+    Map<String, Object> body = new LinkedHashMap<>();
+    body.put("status", HttpStatus.BAD_REQUEST.value());
+    body.put("message", message);
+    body.put("path", request.getRequestURI());
+
+    return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+  }
+
+  @ExceptionHandler(ConstraintViolationException.class)
+  public ResponseEntity<Map<String, Object>> handleConstraintViolationException(
+          ConstraintViolationException ex, HttpServletRequest request) {
+
+    Map<String, String> violations = ex.getConstraintViolations().stream()
+            .collect(Collectors.toMap(
+                    v -> v.getPropertyPath().toString(),
+                    v -> v.getMessage(),
+                    (msg1, msg2) -> msg1
+            ));
+
+    Map<String, Object> body = new LinkedHashMap<>();
+    body.put("status", HttpStatus.BAD_REQUEST.value());
+    body.put("message", "Validation error");
+    body.put("path", request.getRequestURI());
+    body.put("errors", violations);
+
+    log.error("Constraint violation: {}", violations);
+
+    return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+  }
+
 }

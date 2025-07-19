@@ -18,15 +18,20 @@
 package com.frg.autocare.services;
 
 import com.frg.autocare.dto.CarDTO;
+import com.frg.autocare.dto.CarFilterDTO;
 import com.frg.autocare.dto.ToolDTO;
 import com.frg.autocare.entities.Car;
 import com.frg.autocare.entities.Tool;
 import com.frg.autocare.exception.ResourceNotFoundException;
 import com.frg.autocare.repository.CarRepository;
 import com.frg.autocare.repository.ToolRepository;
+import com.frg.autocare.specifications.CarSpecification;
 import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,10 +43,16 @@ public class CarService {
   private final ToolRepository toolRepository;
 
   @Transactional(readOnly = true)
-  public List<CarDTO> getAllCars() {
-    List<Car> cars = carRepository.findAll();
+  public Page<CarDTO> getAllCars(
+          CarFilterDTO carFilter, Pageable pageable) {
+      return carRepository.findAll(CarSpecification.withFilters(
+              carFilter.make(),
+              carFilter.model(),
+              carFilter.owner(),
+              carFilter.maintainer()),
+              pageable
+      ).map(this::mapToCarDTO);
 
-    return cars.stream().map(this::mapToCarDTO).collect(Collectors.toList());
   }
 
   @Transactional(readOnly = true)
