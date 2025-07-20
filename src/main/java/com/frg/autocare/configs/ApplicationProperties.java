@@ -9,6 +9,6 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 public class ApplicationProperties {
-  @Value("${dummy.password}")
-  private String DUMMY_ADMIN_USER_PASSWORD;
+  @Value("${user.dummy-password}")
+  private String dummyPassword;
 }

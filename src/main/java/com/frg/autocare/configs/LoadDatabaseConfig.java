@@ -56,7 +56,7 @@ public class LoadDatabaseConfig {
       User user1 = new User();
       user1.setName("John Doe");
       user1.setEmail("john.doe@example.com");
-      user1.setPassword(passwordEncoder.encode(properties.getDUMMY_ADMIN_USER_PASSWORD()));
+      user1.setPassword(passwordEncoder.encode(properties.getDummyPassword()));
       user1.setRole(Role.ADMIN);
       userRepository.save(user1);
 
