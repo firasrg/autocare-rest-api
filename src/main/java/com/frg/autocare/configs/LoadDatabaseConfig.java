@@ -29,7 +29,6 @@ import com.frg.autocare.repository.MaintainerRepository;
 import com.frg.autocare.repository.ToolRepository;
 import com.frg.autocare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,9 +41,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class LoadDatabaseConfig {
 
   private final PasswordEncoder passwordEncoder;
-
-  @Value("${data.DUMMY_ADMIN_USER_PASSWORD}")
-  private String password;
+  private ApplicationProperties applicationProperties;
 
   @Bean
   CommandLineRunner initDatabase(
@@ -52,12 +49,14 @@ public class LoadDatabaseConfig {
       CarRepository carRepository,
       CustomerRepository customerRepository,
       MaintainerRepository maintainerRepository,
-      ToolRepository toolRepository) {
+      ToolRepository toolRepository,
+      ApplicationProperties applicationProperties) {
     return args -> {
+      this.applicationProperties = applicationProperties;
       User user1 = new User();
       user1.setName("John Doe");
       user1.setEmail("john.doe@example.com");
-      user1.setPassword(passwordEncoder.encode(password));
+      user1.setPassword(passwordEncoder.encode(this.applicationProperties.dummyUserPassword()));
       user1.setRole(Role.ADMIN);
       userRepository.save(user1);
 

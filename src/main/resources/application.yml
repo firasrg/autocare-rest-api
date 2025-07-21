@@ -80,5 +80,5 @@ app:
     expiration: ${JWT_EXPIRATION:86400000} # 24 hours
 
 # Define Dummy User Password
-data:
-  DUMMY_ADMIN_USER_PASSWORD: password123
+autocare-rest-api:
+  dummyUserPassword: ${DUMMY_ADMIN_USER_PASSWORD:password123}
