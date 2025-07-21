@@ -41,6 +41,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class LoadDatabaseConfig {
 
   private final PasswordEncoder passwordEncoder;
+  private ApplicationProperties applicationProperties;
 
   @Bean
   CommandLineRunner initDatabase(
@@ -48,12 +49,14 @@ public class LoadDatabaseConfig {
       CarRepository carRepository,
       CustomerRepository customerRepository,
       MaintainerRepository maintainerRepository,
-      ToolRepository toolRepository) {
+      ToolRepository toolRepository,
+      ApplicationProperties applicationProperties) {
     return args -> {
+      this.applicationProperties = applicationProperties;
       User user1 = new User();
       user1.setName("John Doe");
       user1.setEmail("john.doe@example.com");
-      user1.setPassword(passwordEncoder.encode("password123"));
+      user1.setPassword(passwordEncoder.encode(this.applicationProperties.dummyUserPassword()));
       user1.setRole(Role.ADMIN);
       userRepository.save(user1);
 
