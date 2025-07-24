@@ -31,6 +31,7 @@
 		<java.version>17</java.version>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<springdoc.version>2.2.0</springdoc.version>
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -96,6 +97,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>${project.groupId}/${project.artifactId}:${project.version}</name>
+						<createdDate>${maven.build.timestamp}</createdDate>
+						<env>
+							<BP_JVM_VERSION>17</BP_JVM_VERSION>
+						</env>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
