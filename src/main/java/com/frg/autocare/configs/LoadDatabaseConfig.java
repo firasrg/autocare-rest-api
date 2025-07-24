@@ -42,6 +42,8 @@ public class LoadDatabaseConfig {
 
   private final PasswordEncoder passwordEncoder;
 
+  private final ApplicationProperties properties;
+
   @Bean
   CommandLineRunner initDatabase(
       UserRepository userRepository,
@@ -53,7 +55,7 @@ public class LoadDatabaseConfig {
       User user1 = new User();
       user1.setName("John Doe");
       user1.setEmail("john.doe@example.com");
-      user1.setPassword(passwordEncoder.encode("password123"));
+      user1.setPassword(passwordEncoder.encode(properties.dummyUserPassword()));
       user1.setRole(Role.ADMIN);
       userRepository.save(user1);
 
